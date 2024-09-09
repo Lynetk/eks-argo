@@ -1,0 +1,33 @@
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: aws-load-balancer-controller
+  namespace: kube-system
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::970547334392:role/AmazonEKSLoadBalancerControllerRole
+  labels:
+    app.kubernetes.io/component: controller
+    app.kubernetes.io/name: aws-load-balancer-controller
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: aws-load-balancer-controller
+spec:
+  destination:
+    name: ""
+    namespace: kube-system
+    server: "https://kubernetes.default.svc"
+  source:
+    path: ""
+    repoURL: "https://aws.github.io/eks-charts"
+    targetRevision: 1.8.2
+    chart: aws-load-balancer-controller
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
