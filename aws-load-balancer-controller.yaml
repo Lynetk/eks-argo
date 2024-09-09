@@ -33,7 +33,7 @@ spec:
           value: eks-001-bottlerocket
         - name: serviceAccount.create
           value: "false"
-        - name: serviceAccount
+        - name: serviceAccount.name
           value: aws-load-balancer-controller
   sources: []
   project: default
