@@ -1,4 +1,5 @@
 ---
+### Might consoder moving this to EKS creation state. but not sure it will work due to missing kubernetes credentials at eks-create time
 apiVersion: v1
 kind: ServiceAccount
 metadata:

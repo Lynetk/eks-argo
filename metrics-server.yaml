@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: metrics-server
+spec:
+  destination:
+    name: ""
+    namespace: monitoring
+    server: "https://kubernetes.default.svc"
+  source:
+    path: ""
+    repoURL: "https://kubernetes-sigs.github.io/metrics-server/"
+    targetRevision: 3.12.1
+    chart: metrics-server
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
