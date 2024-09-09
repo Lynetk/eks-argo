@@ -25,6 +25,16 @@ spec:
     repoURL: "https://aws.github.io/eks-charts"
     targetRevision: 1.8.2
     chart: aws-load-balancer-controller
+    helm:
+      parameters:
+        - name: autoscaling.enabled
+          value: "true"
+        - name: clusterName
+          value: eks-001-bottlerocket
+        - name: serviceAccount.create
+          value: "false"
+        - name: serviceAccount
+          value: aws-load-balancer-controller
   sources: []
   project: default
   syncPolicy:
