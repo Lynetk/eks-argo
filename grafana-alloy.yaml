@@ -12,6 +12,16 @@ spec:
     repoURL: "https://grafana.github.io/helm-charts"
     targetRevision: 0.7.0
     chart: alloy
+    helm:
+      values: |
+        alloy:
+          configMap:
+            content: |
+              loki.write "loki" {
+                endpoint {
+                  url = "http://loki-write:3100/loki/api/v1/push"
+                }
+              }
   sources: []
   project: idp-project
   syncPolicy:
