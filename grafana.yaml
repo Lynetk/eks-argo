@@ -4,16 +4,16 @@ metadata:
   name: grafana
 spec:
   destination:
-    name: ''
+    name: ""
     namespace: monitoring
-    server: 'https://kubernetes.default.svc'
+    server: "https://kubernetes.default.svc"
   source:
-    path: ''
-    repoURL: 'https://grafana.github.io/helm-charts'
-    targetRevision: '8.5.1'
+    path: ""
+    repoURL: "https://grafana.github.io/helm-charts"
+    targetRevision: "8.5.1"
     chart: grafana
   sources: []
-  project: default
+  project: idp-project
   syncPolicy:
     automated:
       prune: false

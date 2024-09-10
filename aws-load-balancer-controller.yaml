@@ -37,7 +37,7 @@ spec:
         - name: serviceAccount.name
           value: aws-load-balancer-controller
   sources: []
-  project: default
+  project: idp-project
   syncPolicy:
     automated:
       prune: false
