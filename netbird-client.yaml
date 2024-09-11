@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: netbird
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: netbird
+  template:
+    metadata:
+      labels:
+        app: netbird
+    spec:
+      containers:
+        - name: netbird
+          image: netbirdio/netbird:latest
+          env:
+            - name: NB_SETUP_KEY
+              value: "6C67927B-2DE2-4871-A00D-0AE49D51E535" # replace with your setup key
+            - name: NB_HOSTNAME
+              value: "netbird-k8s-router" # name that will appear in the management UI
+            - name: NB_LOG_LEVEL
+              value: "info"
+          securityContext:
+            capabilities:
+              add:
+                - NET_ADMIN
+                - SYS_RESOURCE
+                - SYS_ADMIN
