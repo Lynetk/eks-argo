@@ -34,7 +34,7 @@ spec:
           pathType: Prefix
 
           hosts:
-            - grafana.idp
+            - grafana.idp.test
         datasources:
           datasources.yaml:
             apiVersion: 1
