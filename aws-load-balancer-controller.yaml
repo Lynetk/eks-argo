@@ -31,7 +31,7 @@ spec:
         - name: autoscaling.enabled
           value: "true"
         - name: clusterName
-          value: eks-001-bottlerocket
+          value: eks-001
         - name: serviceAccount.create
           value: "false"
         - name: serviceAccount.name

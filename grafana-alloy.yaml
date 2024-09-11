@@ -103,7 +103,7 @@ spec:
               loki.process "pod_logs" {
                 stage.static_labels {
                     values = {
-                      cluster = "eks-001-bottlerocket",
+                      cluster = "eks-001",
                     }
                 }
 
