@@ -14,6 +14,12 @@ spec:
     chart: grafana
     helm:
       values: |
+        persistence:
+          type: pvc
+          enabled: true
+          accessModes:
+            - ReadWriteOnce
+          size: 10Gi
         datasources:
           datasources.yaml:
             apiVersion: 1
@@ -28,6 +34,18 @@ spec:
                 url: http://grafana-loki-gateway
                 access: proxy
                 isDefault: false
+            dashboardProviders:
+              dashboardproviders.yaml:
+                apiVersion: 1
+                providers:
+                - name: 'default'
+                  orgId: 1
+                  folder: ''
+                  type: file
+                  disableDeletion: false
+                  editable: true
+                  options:
+                    path: /var/lib/grafana/dashboards/default
             dashboards:
               default:
                 node-exporter:
