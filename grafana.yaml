@@ -12,6 +12,22 @@ spec:
     repoURL: "https://grafana.github.io/helm-charts"
     targetRevision: "8.5.1"
     chart: grafana
+    helm:
+      values: |
+        datasources:
+          datasources.yaml:
+            apiVersion: 1
+            datasources:
+              - name: Prometheus
+                type: prometheus
+                url: http://prometheus-server
+                access: proxy
+                isDefault: true
+              - name: Loki
+                type: loki
+                url: http://grafana-loki-gateway
+                access: proxy
+                isDefault: false
   sources: []
   project: idp-project
   syncPolicy:
