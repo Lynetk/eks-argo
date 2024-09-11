@@ -42,6 +42,9 @@ spec:
           querier:
             # Default is 4, if you have enough memory and CPU you can increase, reduce if OOMing
             max_concurrent: 4
+          chunksCache:
+            enabled: true
+            allocatedMemory: 1024
 
         #gateway:
         #  ingress:
