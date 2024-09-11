@@ -34,27 +34,27 @@ spec:
                 url: http://grafana-loki-gateway
                 access: proxy
                 isDefault: false
-            dashboardProviders:
-              dashboardproviders.yaml:
-                apiVersion: 1
-                providers:
-                  - name: 'default'
-                    orgId: 1
-                    folder: ''
-                    type: file
-                    disableDeletion: false
-                    editable: true
-                    options:
-                      path: /var/lib/grafana/dashboards/default
-            dashboards:
-              default:
-                node-exporter:
-                  gnetId: 1860
-                  datasource: Prometheus
-                prometheus-stats:
-                  gnetId: 2
-                  revision: 2
-                  datasource: Prometheus
+        dashboardProviders:
+          dashboardproviders.yaml:
+            apiVersion: 1
+            providers:
+              - name: 'default'
+                orgId: 1
+                folder: ''
+                type: file
+                disableDeletion: false
+                editable: true
+                options:
+                  path: /var/lib/grafana/dashboards/default
+        dashboards:
+          default:
+            node-exporter:
+              gnetId: 1860
+              datasource: Prometheus
+            prometheus-stats:
+              gnetId: 2
+              revision: 2
+              datasource: Prometheus
   sources: []
   project: idp-project
   syncPolicy:
