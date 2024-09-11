@@ -28,6 +28,17 @@ spec:
                 url: http://grafana-loki-gateway
                 access: proxy
                 isDefault: false
+          dashboards:
+            default:
+              some-dashboard:
+                json: |
+                  $RAW_JSON
+              node-exporter:
+                url: https://raw.githubusercontent.com/rfmoz/grafana-dashboards/master/prometheus/node-exporter-full.json
+              prometheus-stats:
+                gnetId: 2
+                revision: 2
+                datasource: Prometheus
   sources: []
   project: idp-project
   syncPolicy:
