@@ -30,9 +30,6 @@ spec:
                 isDefault: false
           dashboards:
             default:
-              some-dashboard:
-                json: |
-                  $RAW_JSON
               node-exporter:
                 url: https://raw.githubusercontent.com/rfmoz/grafana-dashboards/master/prometheus/node-exporter-full.json
               prometheus-stats:
