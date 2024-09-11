@@ -19,7 +19,7 @@ spec:
             enabled: true
             ingressClassName: nginx
             hosts:
-              - host: prometheus.idp.test
+              - prometheus.idp.test
   sources: []
   project: idp-project
   syncPolicy:
