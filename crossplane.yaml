@@ -17,9 +17,8 @@ spec:
     helm:
       values: |
         provider:
-          packages: {
-            xpkg.upbound.io/crossplane-contrib/provider-aws:v0.49.1
-          }
+          packages: 
+            - xpkg.upbound.io/crossplane-contrib/provider-aws:v0.49.1
   sources: []
   project: idp-project
   syncPolicy:
