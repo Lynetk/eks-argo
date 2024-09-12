@@ -7,4 +7,4 @@ spec:
     delaySeconds: 4
     region: eu-north-1
   providerConfigRef:
-    name: provider-aws
+    name: aws-provider
