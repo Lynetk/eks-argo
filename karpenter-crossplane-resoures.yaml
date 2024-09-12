@@ -1,0 +1,10 @@
+apiVersion: sqs.aws.crossplane.io/v1beta1
+kind: Queue
+metadata:
+  name: eks-001-karpenter
+spec:
+  forProvider:
+    delaySeconds: 4
+    region: eu-north-1
+  providerConfigRef:
+    name: provider-aws
