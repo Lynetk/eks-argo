@@ -14,6 +14,9 @@ spec:
     chart: grafana
     helm:
       values: |
+        admin:
+          existingSecret: "grafana-admin"
+          passwordKey: data
         persistence:
           type: pvc
           enabled: true
