@@ -72,7 +72,6 @@ spec:
               service.beta.kubernetes.io/aws-load-balancer-name: "ingress-nginx-public"
               service.beta.kubernetes.io/aws-load-balancer-backend-protocol: "tcp"
               service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "true"
-              service.beta.kubernetes.io/aws-load-balancer-eip-allocations: "eipalloc-058358a1b6b32fdbc,eipalloc-03ab69d86eea04847,eipalloc-0b63e0ab6aa195664"
               service.beta.kubernetes.io/aws-load-balancer-target-group-attributes: proxy_protocol_v2.enabled=true
 
   sources: []
