@@ -3,7 +3,7 @@ kind: Application
 metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "4"
-  name: ingress-nginx
+  name: ingress-nginx-public
 spec:
   destination:
     name: ""
@@ -16,11 +16,12 @@ spec:
     chart: ingress-nginx
     helm:
       values: |
-        nameOverride: ingress-nginx-private
+        nameOverride: ingress-nginx-public
         controller:
           ingressClassByName: true
           kind: Deployment
-          replicaCount: 2
+          replicaCount: 1
+          allowSnippetAnnotations: true
           # extraArgs:
           #   default-ssl-certificate: "kube-system/cert-wildcard-livahealthcare-com"
 
@@ -41,10 +42,10 @@ spec:
           #           - static
 
           ingressClassResource:
-            name: nginx
+            name: nginx-public
             enabled: true
-            default: true
-            controllerValue: "k8s.io/ingress-nginx"
+            default: false
+            controllerValue: "k8s.io/ingress-nginx-public"
 
           metrics:
             port: 10254
@@ -67,10 +68,11 @@ spec:
             annotations:
               service.beta.kubernetes.io/aws-load-balancer-type: "external"
               service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: "ip"
-              service.beta.kubernetes.io/aws-load-balancer-scheme: "internal"
-              service.beta.kubernetes.io/aws-load-balancer-name: "ingress-nginx-private"
+              service.beta.kubernetes.io/aws-load-balancer-scheme: "internet-facing"
+              service.beta.kubernetes.io/aws-load-balancer-name: "ingress-nginx-public"
               service.beta.kubernetes.io/aws-load-balancer-backend-protocol: "tcp"
               service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "true"
+              service.beta.kubernetes.io/aws-load-balancer-eip-allocations: "eipalloc-058358a1b6b32fdbc,eipalloc-03ab69d86eea04847,eipalloc-0b63e0ab6aa195664"
               service.beta.kubernetes.io/aws-load-balancer-target-group-attributes: proxy_protocol_v2.enabled=true
 
   sources: []
