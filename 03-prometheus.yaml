@@ -19,9 +19,9 @@ spec:
         server:
           ingress:
             enabled: true
-            ingressClassName: nginx
+            ingressClassName: nginx-private
             hosts:
-              - prometheus.idp.test
+              - prometheus.jppol.click
   sources: []
   project: idp-project
   syncPolicy:
