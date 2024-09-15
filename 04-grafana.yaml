@@ -28,7 +28,7 @@ spec:
           size: 10Gi
         ingress:
           enabled: true
-          ingressClassName: nginx
+          ingressClassName: nginx-public
           # Values can be templated
           annotations:
             kubernetes.io/ingress.class: nginx-private
