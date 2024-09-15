@@ -16,7 +16,7 @@ spec:
     chart: cert-manager
     helm:
       parameters:
-        - name: installCRDs
+        - name: crds.enabled
           value: "true"
   sources: []
   project: idp-project
