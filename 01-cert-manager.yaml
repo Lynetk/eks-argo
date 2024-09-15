@@ -13,10 +13,6 @@ spec:
     path: ""
     repoURL: "https://charts.jetstack.io"
     targetRevision: v1.15.3
-    directory:
-      jsonnet:
-        tlas:
-          - {}
     chart: cert-manager
   sources: []
   project: idp-project
