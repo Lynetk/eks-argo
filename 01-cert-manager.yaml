@@ -18,6 +18,10 @@ spec:
       parameters:
         - name: crds.enabled
           value: "true"
+        - name: podDnsConfig.nameservers[0]
+          value: "1.1.1.1"
+        - name: podDnsConfig.nameservers[1]
+          value: "8.8.8.8"
   sources: []
   project: idp-project
   syncPolicy:
