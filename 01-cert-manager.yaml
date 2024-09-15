@@ -18,6 +18,8 @@ spec:
       parameters:
         - name: crds.enabled
           value: "true"
+        - name: dnsPolicy
+          value: "None"
         - name: podDnsConfig.nameservers[0]
           value: "1.1.1.1"
         - name: podDnsConfig.nameservers[1]
