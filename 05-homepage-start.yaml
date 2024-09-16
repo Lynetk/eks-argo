@@ -6,21 +6,10 @@ metadata:
   name: homepage
 spec:
   destination:
-    name: ""
     namespace: idp-custom
-    server: "https://kubernetes.default.svc"
-  sources: []
+    server: https://kubernetes.default.svc
   project: idp-project
-  syncPolicy:
-    automated:
-      prune: false
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
   source:
-    path: ""
-    repoURL: "https://jameswynn.github.io/helm-charts"
-    targetRevision: 2.0.1
     chart: homepage
     helm:
       values: |
@@ -39,3 +28,8 @@ spec:
               - hosts:
                 - start.jppol.click
                 secretName: start-jppol-click
+    repoURL: https://jameswynn.github.io/helm-charts/
+    targetRevision: 2.0.1
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
