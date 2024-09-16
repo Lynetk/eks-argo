@@ -34,6 +34,7 @@ spec:
           tls:
             - hosts:
               - start.jppol.click
+              secretName: start-jppol-click
   sources: []
   project: idp-project
   syncPolicy:
