@@ -33,7 +33,7 @@ spec:
         config:
           services:
             - IDP:
-              - ArgoCD
+              - ArgoCD:
                 href: https://argocd.jppol.click
                 description: GitOPS
   syncPolicy:
