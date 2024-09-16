@@ -14,13 +14,6 @@ spec:
     chart: homepage
     helm:
       values: |
-        config:
-          services:
-            - IDP:
-              - ArgoCD
-                href: https://argocd.jppol.click
-                description: GitOPS
-
         ingress:
           main:
             enabled: true
