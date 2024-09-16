@@ -24,8 +24,8 @@ spec:
           value: "1.1.1.1"
         - name: podDnsConfig.nameservers[1]
           value: "8.8.8.8"
-        - name: dns01RecursiveNameservers
-          value: "1.1.1.1"
+        - name: dns01RecursiveNameservers[0]
+          value: "1.1.1.1:53"
   sources: []
   project: idp-project
   syncPolicy:
