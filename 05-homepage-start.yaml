@@ -36,6 +36,9 @@ spec:
               - ArgoCD:
                   href: https://argocd.jppol.click
                   description: GitOPS
+              - Grafana:
+                  href: https://grafana.jppol.click
+                  description: Metrics and logs
   syncPolicy:
     automated:
       prune: false
