@@ -13,6 +13,23 @@ spec:
     chart: homepage
     repoURL: https://jameswynn.github.io/helm-charts/
     targetRevision: 2.0.1
+    helm:
+      values: |
+        ingress:
+          main:
+            enabled: true
+            annotations:
+              cert-manager.io/cluster-issuer: "letsencrypt"
+            ingressClassName: nginx-public
+            hosts:
+              - host: start.jppol.click
+              paths:
+                - path: /
+                  pathType: Prefix
+            tls:
+              - hosts:
+                - start.jppol.click
+                secretName: start-jppol-click
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
