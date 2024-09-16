@@ -30,6 +30,12 @@ spec:
               - hosts:
                 - start.jppol.click
                 secretName: start-jppol-click
+        config:
+          services:
+            - IDP:
+              - ArgoCD
+                href: https://argocd.jppol.click
+                description: GitOPS
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
