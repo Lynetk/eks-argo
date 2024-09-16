@@ -3,6 +3,7 @@ kind: ClusterIssuer
 metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "3"
+    SkipDryRunOnMissingResource: "true"
   name: letsencrypt
 spec:
   acme:
