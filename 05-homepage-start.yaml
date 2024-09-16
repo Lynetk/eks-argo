@@ -34,8 +34,8 @@ spec:
           services:
             - IDP:
               - ArgoCD:
-                href: https://argocd.jppol.click
-                description: GitOPS
+                  href: https://argocd.jppol.click
+                  description: GitOPS
   syncPolicy:
     automated:
       prune: false
