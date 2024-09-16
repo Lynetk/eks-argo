@@ -19,7 +19,7 @@ spec:
       - CreateNamespace=true
   source:
     path: ""
-    repoURL: "http://jameswynn.github.io/helm-charts"
+    repoURL: "https://jameswynn.github.io/helm-charts"
     targetRevision: 2.0.1
     chart: homepage
     helm:
