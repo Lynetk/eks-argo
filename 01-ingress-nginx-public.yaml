@@ -62,7 +62,7 @@ spec:
 
           service:
             external:
-              enabled: false
+              enabled: true
             internal:
               enabled: false
             annotations:
