@@ -14,9 +14,9 @@ spec:
       path: ""
       targetRevision: 1.15.0
       chart: external-dns
-        helm:
-          valueFiles:
-            - $values/external-dns/values.yaml
+      helm:
+        valueFiles:
+          - $values/external-dns/values.yaml
     - repoURL: https://github.com/Lynetk/eks-argo-config.git
       targetRevision: main
       ref: values
