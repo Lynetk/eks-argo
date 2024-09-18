@@ -25,14 +25,14 @@ spec:
           create: true
           annotations: 
             eks.amazonaws.com/role-arn: "arn:aws:iam::970547334392:role/ExternalDNSRole"
-          # -- Log level.
-          logLevel: info
+        # -- Log level.
+        logLevel: info
 
-          # -- Log format.
-          logFormat: json
+        # -- Log format.
+        logFormat: json
 
-          # -- Interval for DNS updates.
-          interval: 1m
+        # -- Interval for DNS updates.
+        interval: 1m
   sources: []
   project: idp-project
   syncPolicy:
