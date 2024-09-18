@@ -14,7 +14,7 @@ spec:
       chart: homepage
       targetRevision: 2.0.1
       helm:
-        valuesFiles:
+        valueFiles:
           - $values/homepage/values.yaml
     - repoURL: https://github.com/Lynetk/eks-argo-config.git
       targetRevision: main
