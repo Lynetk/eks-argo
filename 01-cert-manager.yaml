@@ -9,23 +9,17 @@ spec:
     name: ""
     namespace: certmanager
     server: "https://kubernetes.default.svc"
-  source:
-    path: ""
-    repoURL: "https://charts.jetstack.io"
-    targetRevision: v1.15.3
-    chart: cert-manager
-    helm:
-      parameters:
-        - name: crds.enabled
-          value: "true"
-        - name: dnsPolicy
-          value: "None"
-        - name: podDnsConfig.nameservers[0]
-          value: "1.1.1.1"
-        - name: podDnsConfig.nameservers[1]
-          value: "8.8.8.8"
-        - name: dns01RecursiveNameservers
-          value: "1.1.1.1:53,8.8.8.8:53"
+  sources:
+    - repoURL: "https://charts.jetstack.io"
+      path: ""
+      targetRevision: v1.15.3
+      chart: cert-manager
+      helm:
+        valueFiles:
+          - $values/cert-manager/values.yaml
+    - repoURL: https://github.com/Lynetk/eks-argo-config.git
+      targetRevision: main
+      ref: values
   sources: []
   project: idp-project
   syncPolicy:
