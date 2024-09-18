@@ -24,13 +24,13 @@ spec:
               cert-manager.io/cluster-issuer: "letsencrypt"
             ingressClassName: nginx-public
             hosts:
-              - host: home.jppol.click
+              - host: start.jppol.click
                 paths:
                   - path: /
                     pathType: Prefix
             tls:
               - hosts:
-                - home.jppol.click
+                - start.jppol.click
                 secretName: start-jppol-click
         config:
           services:
