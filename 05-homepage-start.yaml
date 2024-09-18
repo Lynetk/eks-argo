@@ -9,38 +9,16 @@ spec:
     namespace: idp-custom
     server: https://kubernetes.default.svc
   project: idp-project
-  source:
-    chart: homepage
-    repoURL: https://jameswynn.github.io/helm-charts/
-    targetRevision: 2.0.1
-    helm:
-      values: |
-        image:
-          tag: v0.9.9
-        ingress:
-          main:
-            enabled: true
-            annotations:
-              cert-manager.io/cluster-issuer: "letsencrypt"
-            ingressClassName: nginx-public
-            hosts:
-              - host: start.jppol.click
-                paths:
-                  - path: /
-                    pathType: Prefix
-            tls:
-              - hosts:
-                - start.jppol.click
-                secretName: start-jppol-click
-        config:
-          services:
-            - IDP:
-              - ArgoCD:
-                  href: https://argocd.jppol.click
-                  description: GitOPS
-              - Grafana:
-                  href: https://grafana.jppol.click
-                  description: Metrics and logs
+  sources:
+    - repoURL: https://jameswynn.github.io/helm-charts/
+      chart: homepage
+      targetRevision: 2.0.1
+      helm:
+        valuesFiles:
+          - $values/homepage/values.yaml
+    - repoURL: https://github.com/Lynetk/eks-argo-config.git
+      targetRevision: main
+      ref: values
   syncPolicy:
     automated:
       prune: false
