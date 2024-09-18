@@ -1,0 +1,40 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+  name: external-dns
+spec:
+  destination:
+    name: ""
+    namespace: kube-system
+    server: "https://kubernetes.default.svc"
+  source:
+    path: ""
+    repoURL: "https://kubernetes-sigs.github.io/external-dns/"
+    targetRevision: 1.15.0
+    chart: external-dns
+    helm:
+      values: |
+        provider:
+          name: aws
+          serviceAccount:
+            create: true
+            annotations:
+              eks.amazonaws.com/role-arn: arn:aws:iam::970547334392:role/ExternalDNSRole
+          # -- Log level.
+          logLevel: info
+
+          # -- Log format.
+          logFormat: json
+
+          # -- Interval for DNS updates.
+          interval: 1m
+  sources: []
+  project: idp-project
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+    syncOptions:
+      - CreateNamespace=true
