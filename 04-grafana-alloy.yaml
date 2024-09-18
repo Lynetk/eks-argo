@@ -16,7 +16,7 @@ spec:
       chart: alloy
       helm:
         valueFiles:
-          - $values/grafana-values/values.yaml
+          - $values/grafana-alloy/values.yaml
     - repoURL: https://github.com/Lynetk/eks-argo-config.git
       targetRevision: main
       ref: values
