@@ -9,20 +9,17 @@ spec:
     name: ""
     namespace: monitoring
     server: "https://kubernetes.default.svc"
-  source:
-    path: ""
-    repoURL: "https://prometheus-community.github.io/helm-charts"
-    targetRevision: 25.27.0
-    chart: prometheus
-    helm:
-      values: |
-        server:
-          ingress:
-            enabled: true
-            ingressClassName: nginx-private
-            hosts:
-              - prometheus.jppol.click
-  sources: []
+  sources:
+    - repoURL: "https://prometheus-community.github.io/helm-charts"
+      path: ""
+      targetRevision: 25.27.0
+      chart: prometheus
+      helm:
+        valueFiles:
+          - $values/prometheus/values.yaml
+    - repoURL: https://github.com/Lynetk/eks-argo-config.git
+      targetRevision: main
+      ref: values
   project: idp-project
   syncPolicy:
     automated:
