@@ -17,6 +17,9 @@ spec:
     helm:
       values: |
         provider:
+        env:
+          - name: AWS_DEFAULT_REGION
+            value: eu-north-1
           name: aws
         serviceAccount:
           create: true
