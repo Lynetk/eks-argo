@@ -20,8 +20,7 @@ spec:
           name: aws
           serviceAccount:
             create: true
-            annotations:
-              eks.amazonaws.com/role-arn: "arn:aws:iam::970547334392:role/ExternalDNSRole"
+            annotations: eks.amazonaws.com/role-arn: "arn:aws:iam::970547334392:role/ExternalDNSRole"
           # -- Log level.
           logLevel: info
 
