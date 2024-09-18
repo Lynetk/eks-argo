@@ -14,9 +14,9 @@ spec:
       path: ""
       targetRevision: 4.11.2
       chart: ingress-nginx
-        helm:
-          valueFiles:
-            - $values/prometheus/values.yaml
+      helm:
+        valueFiles:
+          - $values/prometheus/values.yaml
     - repoURL: https://github.com/Lynetk/eks-argo-config.git
       targetRevision: main
       ref: values
