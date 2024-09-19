@@ -14,9 +14,9 @@ spec:
       path: ""
       targetRevision: "8.5.1"
       chart: grafana
-        helm:
-          valueFiles:
-            - $values/grafana/values.yaml
+      helm:
+        valueFiles:
+          - $values/grafana/values.yaml
     - repoURL: https://github.com/Lynetk/eks-argo-config.git
       targetRevision: main
       ref: values
