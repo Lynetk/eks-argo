@@ -10,7 +10,7 @@ spec:
     namespace: kube-system
     server: "https://kubernetes.default.svc"
   sources:
-    - repoURL: "https://kubernetes-sigs.github.io/external-dns/"
+    - repoURL: "https://kubernetes-sigs.github.io/external-dns"
       path: ""
       targetRevision: 1.15.0
       chart: external-dns
