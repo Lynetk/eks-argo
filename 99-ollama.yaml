@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ollama
+spec:
+  destination:
+    name: ""
+    namespace: demo
+    server: https://kubernetes.default.svc
+  source:
+    path: ""
+    repoURL: https://otwld.github.io/ollama-helm
+    targetRevision: 0.59.0
+    chart: ollama
+    helm:
+      parameters:
+        - name: ollama.gpu.enabled
+          value: "true"
+        - name: ingress.enabled
+          value: "true"
+        - name: ingress.hosts[0].host
+          value: ollama.jppol.click
+  sources: []
+  project: idp-project
+  syncPolicy:
+    automated: null
