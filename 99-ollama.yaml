@@ -24,3 +24,4 @@ spec:
   project: idp-project
   syncPolicy:
     automated: null
+      - CreateNamespace=true
