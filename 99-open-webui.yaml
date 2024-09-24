@@ -7,6 +7,8 @@ spec:
     name: ""
     namespace: demo
     server: https://kubernetes.default.svc
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
   sources:
     - repoURL: https://helm.openwebui.com
       path: ""
