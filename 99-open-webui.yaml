@@ -2,13 +2,13 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: open-webui
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     name: ""
     namespace: demo
     server: https://kubernetes.default.svc
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
   sources:
     - repoURL: https://helm.openwebui.com
       path: ""
