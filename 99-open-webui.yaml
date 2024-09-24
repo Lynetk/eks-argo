@@ -1,20 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ollama
+  name: open-webui
 spec:
   destination:
     name: ""
     namespace: demo
     server: https://kubernetes.default.svc
   sources:
-    - repoURL: https://otwld.github.io/ollama-helm
+    - repoURL: https://helm.openwebui.com
       path: ""
       targetRevision: 0.59.0
-      chart: ollama
+      chart: open-webui
       helm:
         valueFiles:
-          - $values/ollama/values.yaml
+          - $values/open-webui/values.yaml
     - repoURL: https://github.com/Lynetk/eks-argo-config.git
       targetRevision: main
       ref: values
