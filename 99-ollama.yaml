@@ -7,20 +7,17 @@ spec:
     name: ""
     namespace: demo
     server: https://kubernetes.default.svc
-  source:
-    path: ""
-    repoURL: https://otwld.github.io/ollama-helm
-    targetRevision: 0.59.0
-    chart: ollama
-    helm:
-      parameters:
-        - name: ollama.gpu.enabled
-          value: "true"
-        - name: ingress.enabled
-          value: "true"
-        - name: ingress.hosts[0].host
-          value: ollama.jppol.click
-  sources: []
+  sources:
+    - repoURL: https://otwld.github.io/ollama-helm
+      path: ""
+      targetRevision: 0.59.0
+      chart: ollama
+      helm:
+        valueFiles:
+          - $values/ollama/values.yaml
+    - repoURL: https://github.com/Lynetk/eks-argo-config.git
+      targetRevision: main
+      ref: values
   project: idp-project
   syncPolicy:
     automated:
