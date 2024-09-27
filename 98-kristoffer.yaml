@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: krisoffer
+spec:
+  destination:
+    name: ""
+    namespace: kristoffer
+    server: https://kubernetes.default.svc
+  source:
+    path: /
+    repoURL: https://github.com/Kristoffer/idp.git
+    targetRevision: HEAD
+    directory:
+      jsonnet:
+        tlas:
+          - {}
+  sources: []
+  project: idp-project
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+    syncOptions:
+      - CreateNamespace=true
