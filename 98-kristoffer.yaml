@@ -12,9 +12,7 @@ spec:
     repoURL: https://github.com/Kristoffer/idp.git
     targetRevision: HEAD
     directory:
-      jsonnet:
-        tlas:
-          - {}
+      recurse: true
   sources: []
   project: idp-project
   syncPolicy:
