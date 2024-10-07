@@ -11,14 +11,17 @@ spec:
     name: ""
     namespace: postgres
     server: https://kubernetes.default.svc
-  source:
-    path: ""
-    repoURL: https://charts.bitnami.com/bitnami
-    targetRevision: 16.0.1
-    chart: postgresql
-    helm:
-      valueFiles: []
-  sources: []
+  sources:
+    - repoURL: https://charts.bitnami.com/bitnami
+      path: ""
+      targetRevision: 16.0.1
+      chart: postgresql
+      helm:
+        valueFiles:
+          - $values/grafana/values.yaml
+    - repoURL: https://github.com/Lynetk/eks-argo-config.git
+      targetRevision: main
+      ref: values
   project: idp-project
   syncPolicy:
     syncOptions:
