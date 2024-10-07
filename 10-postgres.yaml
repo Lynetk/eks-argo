@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: postgres
+  annotations:
+    argocd.argoproj.io/sync-wave: "10"
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    name: ""
+    namespace: postgres
+    server: https://kubernetes.default.svc
+  source:
+    path: ""
+    repoURL: https://charts.bitnami.com/bitnami
+    targetRevision: 16.0.1
+    chart: postgresql
+    helm:
+      valueFiles: []
+  sources: []
+  project: idp-project
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
