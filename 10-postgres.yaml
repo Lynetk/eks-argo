@@ -19,7 +19,7 @@ spec:
       chart: postgresql
       helm:
         valueFiles:
-          - $values/grafana/values.yaml
+          - $values/postgres/values.yaml
     - repoURL: https://github.com/Lynetk/eks-argo-config.git
       targetRevision: main
       ref: values
