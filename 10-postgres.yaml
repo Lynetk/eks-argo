@@ -25,5 +25,8 @@ spec:
       ref: values
   project: idp-project
   syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
     syncOptions:
       - CreateNamespace=true
