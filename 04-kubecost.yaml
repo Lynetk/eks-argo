@@ -22,6 +22,20 @@ spec:
       versionId: d5ce54d7-c559-4d4e-85aa-e337406997ef
 
 ---
+apiVersion: v1
+kind: Secret
+metadata:
+  labels:
+    argocd.argoproj.io/secret-type: repository
+  name: docker-io-helm-oci
+  namespace: argocd
+stringData:
+  url: public.ecr.aws/kubecost/
+  name: cost-analyzer
+  type: helm
+  enableOCI: "true"
+
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -36,7 +50,7 @@ spec:
     namespace: kubecost
     server: "https://kubernetes.default.svc"
   sources:
-    - repoURL: "https://kubecost.github.io/cost-analyzer"
+    - repoURL: "public.ecr.aws/kubecost/cost-analyzer"
       path: ""
       targetRevision: "2.4.1"
       chart: cost-analyzer
