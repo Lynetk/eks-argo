@@ -1,3 +1,27 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "2"
+  name: kubecost
+
+---
+apiVersion: mumoshu.github.io/v1alpha1
+kind: AWSSecret
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "3"
+  name: kubecost-basic-auth
+  namespace: kubecost
+spec:
+  stringDataFrom:
+    secretsManagerSecretRef:
+      secretId: idp/kubecost-basic-auth
+      versionId: fc7a16de-b6e8-4eee-890c-1d4ccf84ef9f
+
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
