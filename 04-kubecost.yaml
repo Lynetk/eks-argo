@@ -19,7 +19,7 @@ spec:
   stringDataFrom:
     secretsManagerSecretRef:
       secretId: idp/kubecost-basic-auth
-      versionId: fc7a16de-b6e8-4eee-890c-1d4ccf84ef9f
+      versionId: 3bc4f0fb-dce4-401e-8410-8b5f85c59a0f
 
 ---
 apiVersion: argoproj.io/v1alpha1
