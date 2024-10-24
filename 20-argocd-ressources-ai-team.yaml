@@ -27,7 +27,7 @@ spec:
         - my-oidc-group
     # A role which provides sync privileges to only the guestbook-dev application, e.g. to provide
     # sync privileges to a CI system
-    - name: ci-role
-      description: Sync privileges for guestbook-dev
-      policies:
-        - p, proj:my-project:ci-role, applications, sync, my-project/guestbook-dev, allow
+    # - name: ci-role
+    #   description: Sync privileges for guestbook-dev
+    #   policies:
+    #     - p, proj:my-project:ci-role, applications, sync, my-project/guestbook-dev, allow
