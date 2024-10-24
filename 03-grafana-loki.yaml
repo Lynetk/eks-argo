@@ -26,6 +26,6 @@ spec:
       helm:
         valueFiles:
           - $values/grafana-loki/values.yaml
-    - repoURL: https://github.com/Lynetk/eks-argo-config.git
+    - repoURL: https://github.com/jppol-idp/argocd-eks-001-test-config.git
       targetRevision: main
       ref: values

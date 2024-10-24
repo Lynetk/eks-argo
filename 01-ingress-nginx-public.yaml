@@ -19,7 +19,7 @@ spec:
       helm:
         valueFiles:
           - $values/ingress-nginx-public/values.yaml
-    - repoURL: https://github.com/Lynetk/eks-argo-config.git
+    - repoURL: https://github.com/jppol-idp/argocd-eks-001-test-config.git
       targetRevision: main
       ref: values
   project: idp-project

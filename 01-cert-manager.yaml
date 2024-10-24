@@ -19,7 +19,7 @@ spec:
       helm:
         valueFiles:
           - $values/cert-manager/values.yaml
-    - repoURL: https://github.com/Lynetk/eks-argo-config.git
+    - repoURL: https://github.com/jppol-ido/argocd-eks-001-test-config.git
       targetRevision: main
       ref: values
   project: idp-project

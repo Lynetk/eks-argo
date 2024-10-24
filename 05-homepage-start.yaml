@@ -18,7 +18,7 @@ spec:
       helm:
         valueFiles:
           - $values/homepage/values.yaml
-    - repoURL: https://github.com/Lynetk/eks-argo-config.git
+    - repoURL: https://github.com/jppol-idp/argocd-eks-001-test-config.git
       targetRevision: main
       ref: values
   syncPolicy:
